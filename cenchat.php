@@ -3,7 +3,7 @@
 Plugin Name: Cenchat Comments
 Plugin URI: https://wordpress.org/plugins/cenchat-comments/
 Description: Comment system that focuses on getting rid of online harassment and making conversations geared more towards the people you know and care about.
-Version: v0.0.1
+Version: 0.0.1
 Author: Cenchat and various contributors
 Author URI: https://github.com/cenchat/cenchat-wordpress-plugin/graphs/contributors
 License: GPL-3.0
