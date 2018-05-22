@@ -4,7 +4,7 @@
         <?php
         settings_fields( 'cenchat' );
         do_settings_sections( 'cenchat' );
-        submit_button( 'Submit' );
+        submit_button( 'Save changes' );
         ?>
     </form>
 </div>
