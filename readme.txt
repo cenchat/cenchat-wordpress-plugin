@@ -5,8 +5,8 @@ Requires at least: 4.9
 Tested up to: 4.9
 Stable tag: 0.0.1
 Requires PHP: 5.6
-License: GPLv3 or later
-License URI: LICENSE
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Comment system that focuses on getting rid of online harassment and making conversations geared more towards the people you know and care about.
 
