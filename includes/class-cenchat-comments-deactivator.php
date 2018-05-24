@@ -19,14 +19,14 @@
  * @subpackage Cenchat_Comments/includes
  */
 class Cenchat_Comments_Deactivator {
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since 0.0.1
-	 */
-	public static function deactivate() {
-		// Reserved for anything that needs to be done in the deactivate hook
-	}
+    /**
+     * Short Description. (use period)
+     *
+     * Long Description.
+     *
+     * @since 0.0.1
+     */
+    public static function deactivate() {
+        // Reserved for anything that needs to be done in the deactivate hook
+    }
 }

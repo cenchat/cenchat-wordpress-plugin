@@ -24,7 +24,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+    die;
 }
 
 /**
@@ -39,9 +39,9 @@ define( 'PLUGIN_NAME_VERSION', '0.0.1' );
  * This action is documented in includes/class-cenchat-comments-activator.php
  */
 function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments-activator.php';
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments-activator.php';
 
-	Cenchat_Comments_Activator::activate();
+    Cenchat_Comments_Activator::activate();
 }
 
 /**
@@ -49,9 +49,9 @@ function activate_plugin_name() {
  * This action is documented in includes/class-cenchat-comments-deactivator.php
  */
 function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments-deactivator.php';
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments-deactivator.php';
 
-	Cenchat_Comments_Deactivator::deactivate();
+    Cenchat_Comments_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_plugin_name' );
@@ -73,9 +73,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments.php';
  * @since 0.0.1
  */
 function run_plugin_name() {
-	$plugin = new Cenchat_Comments();
+    $plugin = new Cenchat_Comments();
 
-	$plugin->run();
+    $plugin->run();
 }
 
 run_plugin_name();
