@@ -55,7 +55,14 @@ class Cenchat_Comments_Admin {
      * @since 0.0.1
      */
     private function register_general_settings() {
-        register_setting( 'cenchat_options', 'cenchat_id' );
+        register_setting(
+            'cenchat_options',
+            'cenchat_id',
+            array(
+                'type' => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+            )
+        );
         add_settings_section( 
             'general_settings_section',
             'General',
