@@ -64,8 +64,8 @@ class Cenchat_Comments {
      * @since 0.0.1
      */
     public function __construct() {
-        if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-            $this->version = PLUGIN_NAME_VERSION;
+        if ( defined( 'CENCHAT_COMMENTS_VERSION' ) ) {
+            $this->version = CENCHAT_COMMENTS_VERSION;
         } else {
             $this->version = '0.0.1';
         }

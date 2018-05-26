@@ -32,13 +32,13 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 0.0.1 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', '0.0.1' );
+define( 'CENCHAT_COMMENTS_VERSION', '0.0.1' );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-cenchat-comments-activator.php
  */
-function activate_plugin_name() {
+function activate_cenchat_comments() {
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments-activator.php';
 
     Cenchat_Comments_Activator::activate();
@@ -48,14 +48,14 @@ function activate_plugin_name() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-cenchat-comments-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_cenchat_comments() {
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments-deactivator.php';
 
     Cenchat_Comments_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_cenchat_comments' );
+register_deactivation_hook( __FILE__, 'deactivate_cenchat_comments' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -72,10 +72,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-cenchat-comments.php';
  *
  * @since 0.0.1
  */
-function run_plugin_name() {
+function run_cenchat_comments() {
     $plugin = new Cenchat_Comments();
 
     $plugin->run();
 }
 
-run_plugin_name();
+run_cenchat_comments();
