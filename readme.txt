@@ -8,41 +8,41 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Comment system that focuses on getting rid of online harassment and making conversations geared more towards the people you know and care about.
+Civilized commenting service.
 
 == Description ==
 
-Cenchat is a comment hosting service that reinvents how discussions happen around your work. We focus on getting rid of online harassment and making conversations geared more towards the people you know and care about.
+Cenchat is a commenting service with a unique way to prevent trolls, harassment, negativity, and spam to happen around your work.
 
-= Make moderation less, not just easier =
+= Built to prevent online harassment =
 
-**Get rid of online harassment**
+**Playful conversations**
 
-Continuously provide a positive environment around your work. Your audiences can only add texts to their comments when replying to someone who follows them. To anyone else, only GIFs and stickers are available.
+Continuously provide a positive environment around your work. Your audiences can add texts to their comments when replying to their followers. To anyone else, only GIFs and stickers are available.
 
-**Ask me anything**
+**Controlled feedback**
 
-Your stories are great and we'd like to ask some stuff about it. Ask Me Anything threads allows your audiences to send text comments only to you.
+Your stories are great and we'd like to talk more about it with you. As a site admin, your audiences can reply with text comments only to you.
 
 = Designed to make the important comments discoverable =
 
 **Personalization**
 
-Sometimes, we just want to know what people who we care about have to say. In Cenchat, when you follow someone, you see their comments first.
+Comments we like from people we care about. In Cenchat, when you follow someone, you see their comments first.
 
 **No deep threading**
 
 Discussions are flat but we also allow 1 level deep of replies. Now you don't have to worry about missing responses buried underneath the reply chain.
 
-= Bring more audience =
+= Brings you more audience =
 
-**Share comments**
+**Share the best comments**
 
 Anyone can be famous. It just takes one comment. You'll also get more traffic when they do.
 
-**Get back those lost conversations**
+**Tag the awesome people**
 
-Sharing your work is great but this also leads to conversations happening outside of it. In Cenchat, your audiences can tag other people giving you the opportunity for more engagement.
+Sharing your work is great but we can do more. In Cenchat, your audiences can tag other people giving you the opportunity for more engagement.
 
 == Installation ==
 
@@ -56,7 +56,7 @@ Sharing your work is great but this also leads to conversations happening outsid
 
 = How can I get a Cenchat ID? =
 
-Cenchat for publishers is currently available to select partners only. You may request an invite at [cenchat.com](https://cenchat.com).
+Sign up then register your website at [cenchat.com](https://cenchat.com).
 
 = Is Cenchat free to use on my site? =
 
