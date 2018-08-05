@@ -15,7 +15,7 @@
  * Plugin Name: Cenchat Comments
  * Plugin URI: https://cenchat.com
  * Description: Civilized commenting service.
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Cenchat
  * Author URI: http://cenchat.com
  * License: GPL-2.0+
@@ -32,7 +32,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 0.0.1 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CENCHAT_COMMENTS_VERSION', '0.0.1' );
+define( 'CENCHAT_COMMENTS_VERSION', '0.0.2' );
 
 /**
  * The code that runs during plugin activation.

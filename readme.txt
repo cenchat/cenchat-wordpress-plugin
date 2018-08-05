@@ -3,7 +3,7 @@ Contributors: rmmmp
 Tags: cenchat, comment, comments
 Requires at least: 4.9
 Tested up to: 4.9
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -83,6 +83,9 @@ No you can't. Cenchat's form of discussion is different from traditional comment
 1. Cenchat Comments
 
 == Changelog ==
+
+= 0.0.2 =
+* Fix bug that loads WordPress built-in comments along with Cenchat comments
 
 = 0.0.1 =
 * Initial launch
