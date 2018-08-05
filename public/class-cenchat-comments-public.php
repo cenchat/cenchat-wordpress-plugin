@@ -94,12 +94,7 @@ class Cenchat_Comments_Public {
      */
     public function add_cenchat_comments() {
         if ( comments_open() ) {
-            $page_id = get_the_ID();
-            $value = isset( $page_id ) ? esc_attr( $page_id ) : '';
-
-            $template = sprintf( '<div id="cenchat-comments" data-page-id="%1$s"></div>', esc_attr( $value ) );
-
-            echo $template;
+            return plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/cenchat-comments-public-display.php';
         }
     }
 }

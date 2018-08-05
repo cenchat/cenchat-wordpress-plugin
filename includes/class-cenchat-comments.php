@@ -139,7 +139,7 @@ class Cenchat_Comments {
 
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
         $this->loader->add_action( 'wp_head', $plugin_public, 'add_cenchat_meta' );
-        $this->loader->add_action( 'comments_template', $plugin_public, 'add_cenchat_comments' );
+        $this->loader->add_filter( 'comments_template', $plugin_public, 'add_cenchat_comments' );
     }
 
     /**
