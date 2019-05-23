@@ -15,3 +15,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 delete_option ( 'cenchat_id' );
+delete_option ( 'cenchat_start_chat_button_text_color' );
+delete_option ( 'cenchat_start_chat_button_background_color' );
