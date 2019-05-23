@@ -58,6 +58,9 @@ No you can't. Cenchat's form of discussion is different from traditional comment
 
 == Changelog ==
 
+= 0.1.1 =
+* Delete new settings options when uninstall plugin
+
 = 0.1.0 =
 * Rebrand from Cenchat Comments to Cenchat
 * Add new button option in settings
