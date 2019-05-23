@@ -63,10 +63,32 @@ class Cenchat_Comments_Admin {
                 'sanitize_callback' => 'sanitize_text_field',
             )
         );
+        register_setting(
+            'cenchat_options',
+            'cenchat_start_chat_button_text_color',
+            array(
+                'type' => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+            )
+        );
+        register_setting(
+            'cenchat_options',
+            'cenchat_start_chat_button_background_color',
+            array(
+                'type' => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+            )
+        );
         add_settings_section( 
             'general_settings_section',
             'General',
             array( $this, 'output_general_settings_section_header' ),
+            'cenchat_options'
+        );
+        add_settings_section( 
+            'start_chat_button_section',
+            'Start Chat Button',
+            array( $this, 'output_start_chat_button_section_header' ),
             'cenchat_options'
         );
         add_settings_field(
@@ -75,6 +97,20 @@ class Cenchat_Comments_Admin {
             array( $this, 'output_cenchat_id_field' ),
             'cenchat_options',
             'general_settings_section'
+        );
+        add_settings_field(
+            'cenchat_start_chat_button_text_color_field',
+            'Text color (in hex code)',
+            array( $this, 'output_cenchat_start_chat_button_text_color_field' ),
+            'cenchat_options',
+            'start_chat_button_section'
+        );
+        add_settings_field(
+            'cenchat_start_chat_button_background_color_field',
+            'Background color (in hex code)',
+            array( $this, 'output_cenchat_start_chat_button_background_color_field' ),
+            'cenchat_options',
+            'start_chat_button_section'
         );
     }
 
@@ -97,6 +133,15 @@ class Cenchat_Comments_Admin {
     }
 
     /**
+     * Outputs the start chat button settings section header
+     *
+     * @since 0.1.0
+     */
+    public function output_start_chat_button_section_header() {
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . '/admin/partials/cenchat-comments-start-chat-button-settings-section-header.php';
+    }
+
+    /**
      * Outputs the Cenchat ID field
      *
      * @since 0.0.1
@@ -106,6 +151,34 @@ class Cenchat_Comments_Admin {
         $value = isset( $cenchat_id ) ? esc_attr( $cenchat_id ) : '';
 
         $template = sprintf( '<input type="text" name="cenchat_id" value="%1$s">', esc_attr( $value ) );
+
+        echo $template;
+    }
+
+    /**
+     * Outputs the start chat button text color field
+     *
+     * @since 0.1.0
+     */
+    public function output_cenchat_start_chat_button_text_color_field() {
+        $cenchat_start_chat_button_text_color = get_option( 'cenchat_start_chat_button_text_color' );
+        $value = isset( $cenchat_start_chat_button_text_color ) ? esc_attr( $cenchat_start_chat_button_text_color ) : '';
+
+        $template = sprintf( '<input type="text" name="cenchat_start_chat_button_text_color" placeholder="#ffffff" value="%1$s">', esc_attr( $value ) );
+
+        echo $template;
+    }
+
+    /**
+     * Outputs the start chat button background color field
+     *
+     * @since 0.1.0
+     */
+    public function output_cenchat_start_chat_button_background_color_field() {
+        $cenchat_start_chat_button_background_color = get_option( 'cenchat_start_chat_button_background_color' );
+        $value = isset( $cenchat_start_chat_button_background_color ) ? esc_attr( $cenchat_start_chat_button_background_color ) : '';
+
+        $template = sprintf( '<input type="text" name="cenchat_start_chat_button_background_color" placeholder="#455b82" value="%1$s">', esc_attr( $value ) );
 
         echo $template;
     }
@@ -125,7 +198,7 @@ class Cenchat_Comments_Admin {
      * @since 0.0.1
      */
     public function add_menu_page() {
-        $menu_icon = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIGNsYXNzPSJzcGxhc2gtc2NyZWVuX19sb2dvIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTMuNTEzIiBoZWlnaHQ9IjEwOS41MzIiIHZpZXdCb3g9IjAgMCAzMC4wMzQgMjguOTgiPg0KPHRpdGxlPkNlbmNoYXQ8L3RpdGxlPg0KDQo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMuNjE5IC0xNzguNjI4KSI+DQogICAgPGcgc3R5bGU9ImxpbmUtaGVpZ2h0OjEuMjUiPg0KICAgIDxwYXRoIGQ9Ik01My42NTMgMjA1LjI0NHEtMi4zMzIgMS4xMTYtNC40NCAxLjczNi0yLjA4NC42Mi00LjQ0LjYyLTMuMDAyIDAtNS41MDctLjg2OC0yLjUwNS0uODkzLTQuMjkxLTIuNjc5LTEuODExLTEuNzg2LTIuODAzLTQuNTE0LS45OTMtMi43MjktLjk5My02LjM3NSAwLTYuNzk3IDMuNzIxLTEwLjY2NiAzLjc0Ni0zLjg3IDkuODcyLTMuODcgMi4zODIgMCA0LjY2NC42NyAyLjMwNy42NyA0LjIxNyAxLjYzN3Y1LjE4NGgtLjI0OXEtMi4xMzMtMS42NjItNC40MTUtMi41NTUtMi4yNTctLjg5My00LjQxNS0uODkzLTMuOTY5IDAtNi4yNzYgMi42OC0yLjI4MiAyLjY1My0yLjI4MiA3LjgxMyAwIDUuMDEgMi4yMzMgNy43MTQgMi4yNTcgMi42NzkgNi4zMjUgMi42NzkgMS40MTQgMCAyLjg3Ny0uMzcyIDEuNDY0LS4zNzIgMi42My0uOTY3IDEuMDE3LS41MjEgMS45MS0xLjA5Mi44OTMtLjU5NSAxLjQxMy0xLjAxN2guMjQ5eiIgc3R5bGU9Ii1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246J3NhbnMtc2VyaWYsIE5vcm1hbCc7Zm9udC12YXJpYW50LWxpZ2F0dXJlczpub3JtYWw7Zm9udC12YXJpYW50LWNhcHM6bm9ybWFsO2ZvbnQtdmFyaWFudC1udW1lcmljOm5vcm1hbDtmb250LWZlYXR1cmUtc2V0dGluZ3M6bm9ybWFsO3RleHQtYWxpZ246c3RhcnQiIGZvbnQtc2l6ZT0iNTAuOCIgYXJpYS1sYWJlbD0iYyIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGxldHRlci1zcGFjaW5nPSIwIiB3b3JkLXNwYWNpbmc9IjAiIHN0cm9rZS13aWR0aD0iLjI2NSIgLz4NCiAgICA8Y2lyY2xlIGN4PSIyNy41ODgiIGN5PSIyMDMuNjQiIHI9IjMuOTY5IiAvPg0KICAgIDwvZz4NCjwvZz4NCjwvc3ZnPg==';
+        $menu_icon = 'data:image/svg+xml;base64,' . base64_encode('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25.604 25.4"><path fill="black" d="M16.858 0q3.675 0 6.094 1.163 2.465 1.163 2.465 2.977 0 .791-.511 1.442-.512.605-1.303.605-.605 0-.977-.186-.325-.186-.93-.605-.28-.279-.884-.65-.558-.28-1.582-.466-1.023-.186-1.86-.186-2.42 0-4.28 1.116-1.861 1.117-2.885 3.117-1.023 1.954-1.023 4.373 0 2.466.977 4.42 1.023 1.953 2.838 3.07 1.814 1.116 4.14 1.116 2.419 0 3.908-.744.325-.186.883-.605.466-.372.791-.558.372-.186.884-.186.93 0 1.442.605.559.558.559 1.488 0 .977-1.257 1.954-1.209.93-3.302 1.535-2.047.605-4.42.605-3.535 0-6.234-1.628-2.698-1.675-4.186-4.56-1.443-2.93-1.443-6.512 0-3.582 1.536-6.466 1.535-2.931 4.28-4.56Q13.322 0 16.858 0z"/><path fill="black" d="M6.35 22.225A3.175 3.175 0 0 1 3.175 25.4 3.175 3.175 0 0 1 0 22.225a3.175 3.175 0 0 1 3.175-3.175 3.175 3.175 0 0 1 3.175 3.175z"/></svg>');
 
         add_menu_page(
             'Cenchat Settings',

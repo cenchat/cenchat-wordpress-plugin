@@ -58,33 +58,12 @@ class Cenchat_Comments_Public {
         if ( comments_open() ) {
             wp_enqueue_script(
                 $this->plugin_name . '_embed',
-                'https://comments.cenchat.com/embeds/1.0.0/universal.js',
-                array(),
-                $this->version,
-                true
-            );
-            wp_enqueue_script(
-                $this->plugin_name . '_iframe_resizer',
-                plugin_dir_url( __FILE__ ) . 'js/cenchat-comments-iframe-resizer.js',
+                'https://widget.cenchat.com/embeds/1.0.0/wordpress.js',
                 array(),
                 $this->version,
                 true
             );
         }
-    }
-
-    /**
-     * Outputs the Cenchat meta tag
-     *
-     * @since 0.0.1
-     */
-    public function add_cenchat_meta() {
-        $cenchat_id = get_option( 'cenchat_id' );
-        $value = isset( $cenchat_id ) ? esc_attr( $cenchat_id ) : '';
-
-        $template = sprintf( '<meta property="cenchat:id" content="%1$s">', esc_attr( $value ) );
-
-        echo $template;
     }
 
     /**
@@ -94,12 +73,7 @@ class Cenchat_Comments_Public {
      */
     public function add_cenchat_comments() {
         if ( comments_open() ) {
-            $page_id = get_the_ID();
-            $value = isset( $page_id ) ? esc_attr( $page_id ) : '';
-
-            $template = sprintf( '<div id="cenchat-comments" data-page-id="%1$s"></div>', esc_attr( $value ) );
-
-            echo $template;
+            return plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/cenchat-comments-public-display.php';
         }
     }
 }

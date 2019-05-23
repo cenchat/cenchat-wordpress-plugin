@@ -1,4 +1,4 @@
-Cenchat WordPress Plugin - WordPress plugin for integrating Cenchat Comments
+Cenchat WordPress Plugin - WordPress plugin for integrating Cenchat
 
 Copyright (C) Cenchat
 
