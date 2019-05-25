@@ -54,7 +54,8 @@ No you can't. Cenchat's form of discussion is different from traditional comment
 
 == Screenshots ==
 
-1. Cenchat demo
+1. Cenchat demo (mobile)
+2. Cenchat demo (tablet and desktop)
 
 == Changelog ==
 
