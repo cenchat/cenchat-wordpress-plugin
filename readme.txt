@@ -1,4 +1,4 @@
-=== Cenchat Comments ===
+=== Cenchat ===
 Contributors: rmmmp
 Tags: cenchat, chat, chats, comment, comments
 Requires at least: 4.9
