@@ -59,6 +59,9 @@ No you can't. Cenchat's form of discussion is different from traditional comment
 
 == Changelog ==
 
+= 0.1.2 =
+* Change plugin name
+
 = 0.1.1 =
 * Delete new settings options when uninstall plugin
 
