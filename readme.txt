@@ -22,7 +22,7 @@ Comments have evolved as social media has taken over it. This is because people 
 
 The problem with disabling your comment section is that your blog may feel inhospitable as it doesn’t encourage dialog. It would also be more difficult for your audiences to directly engage with you—preventing you to provide value beyond your content.
 
-Cenchat helps your blog to adapt to these changes letting the community conversations happen in social media and still keep an open channel for people that wants to get further insights directly from you.
+Cenchat helps your blog to adapt to these changes by letting the community conversations happen in social media and still keep an open channel for people that wants to get further insights directly from you.
 
 Here are a few more reasons why you should use Cenchat:
 
